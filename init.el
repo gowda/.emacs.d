@@ -55,3 +55,6 @@
 	  (propertize "\u2502 " 'face 'linum))))
 
      (setq linum-format 'linum-format-func)))
+
+;; shell script mode
+(setq sh-basic-offset 2)
