@@ -1,0 +1,8 @@
+# custom configurations
+/custom.el
+
+# saved places
+/places
+
+# packages
+/elpa
