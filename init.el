@@ -56,15 +56,8 @@
 
      (setq linum-format 'linum-format-func)))
 
-;; shell script mode
-(setq sh-basic-offset 2)
+;; setup custom modules path
+(add-to-list 'load-path (expand-file-name "modules" "~/.emacs.d"))
 
-;; yaml mode
-(use-package yaml-mode
-  :ensure t
-  :init
-  (add-hook 'yaml-mode-hook 'subword-mode)
-  (add-hook 'yaml-mode-hook
-            (lambda()
-              (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
-  (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode)))
+(require 'bash)
+(require 'yaml)
