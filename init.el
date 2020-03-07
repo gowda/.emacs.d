@@ -61,3 +61,4 @@
 
 (require 'bash)
 (require 'yaml)
+(require 'ruby)
