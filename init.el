@@ -45,6 +45,8 @@
 
 (eval-after-load 'linum
   '(progn
+     (set-face-foreground 'linum "#4f4f4f")
+     (set-face-background 'linum nil)
      (defun linum-format-func (line)
        (let ((w (length
 		 (number-to-string (count-lines (point-min) (point-max))))))
@@ -61,4 +63,4 @@
 
 (require 'bash)
 (require 'yaml)
-(require 'ruby)
+;; (require 'ruby)
