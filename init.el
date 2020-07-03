@@ -61,6 +61,7 @@
 ;; setup custom modules path
 (add-to-list 'load-path (expand-file-name "modules" "~/.emacs.d"))
 
+(require 'theme)
 (require 'bash)
 (require 'yaml)
 ;; (require 'ruby)
