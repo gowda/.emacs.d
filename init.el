@@ -40,6 +40,15 @@
 (eval-when-compile
   (require 'use-package))
 
+(use-package smartparens
+  :ensure t
+  :config
+  (add-hook 'prog-mode-hook 'turn-on-smartparens-strict-mode))
+
+(use-package smartparens-config
+  :ensure smartparens
+  :config (progn (show-smartparens-global-mode t)))
+
 ;; setup custom modules path
 (add-to-list 'load-path (expand-file-name "modules" "~/.emacs.d"))
 
