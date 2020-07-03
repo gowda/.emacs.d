@@ -10,9 +10,12 @@
 
 (setq ruby-deep-indent-paren nil)
 
-(use-package rvm :ensure t
+(use-package rvm
+  :ensure t
   :init
-  (rvm-use-default))
+  (add-hook 'enh-ruby-mode-hook
+            (lambda ()
+              (rvm-activate-corresponding-ruby))))
 
 (use-package flymake-ruby
   :ensure t
