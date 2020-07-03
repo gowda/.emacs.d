@@ -41,4 +41,10 @@
   :bind (:map inf-ruby-minor-mode-map
               ("C-c C-z" . 'switch-to-inf)))
 
+(use-package ruby-end
+  :ensure t
+  :commands ruby-end-mode
+  :custom
+  (ruby-end-insert-newline nil))
+
 (provide 'ruby)
