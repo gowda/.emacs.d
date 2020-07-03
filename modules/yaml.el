@@ -1,6 +1,7 @@
 ;; yaml mode
 (use-package yaml-mode
   :ensure t
+  :commands yaml-mode
   :init
   (add-hook 'yaml-mode-hook 'subword-mode)
   (add-hook 'yaml-mode-hook

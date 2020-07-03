@@ -1,3 +1,5 @@
-(use-package magit :ensure t)
+(use-package magit
+  :ensure t
+  :commands magit-mode)
 
 (provide 'git)

@@ -12,6 +12,7 @@
 
 (use-package rvm
   :ensure t
+  :commands rvm-activate-corresponding-ruby
   :init
   (add-hook 'enh-ruby-mode-hook
             (lambda ()
@@ -19,6 +20,7 @@
 
 (use-package flymake-ruby
   :ensure t
+  :commands flymake-ruby-load
   :init
   (add-hook 'enh-ruby-mode-hook 'flymake-ruby-load))
 
@@ -33,6 +35,7 @@
 
 (use-package inf-ruby
   :ensure t
+  :commands inf-ruby-minor-mode
   :init
   (add-hook 'enh-ruby-mode-hook 'inf-ruby-minor-mode)
   :bind (:map inf-ruby-minor-mode-map
