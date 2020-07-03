@@ -57,4 +57,5 @@
     (require 'line-number)
     (require 'bash)
     (require 'yaml)
-    (require 'ruby)))
+    (require 'ruby)
+    (require 'completion)))
