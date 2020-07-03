@@ -1,3 +1,21 @@
+(defun setup-compile-command ()
+  (progn
+    ;;; Local Variables:
+    ;;; byte-compile-warnings: (not free-vars)
+    ;;; End:
+    (set (make-local-variable 'compilation-read-command) nil)
+    (if buffer-file-name
+        (progn
+          (add-hook 'compilation-filter-hook
+                    (lambda ()
+                      (ansi-color-apply-on-region
+                       compilation-filter-start
+                       (point-max))))
+          (set (make-local-variable 'compile-command)
+               (concat "ruby " buffer-file-name)))
+      (set (make-local-variable 'compile-command)
+           "echo 'Save the buffer to a file before running'"))))
+
 (use-package enh-ruby-mode
   :ensure t
   :mode
@@ -6,7 +24,10 @@
    ("Rakefile" . enh-ruby-mode)
    ("\\.rb" . enh-ruby-mode)
    ("\\.ru" . enh-ruby-mode)
-   ("\\.rake" . enh-ruby-mode)))
+   ("\\.rake" . enh-ruby-mode))
+  :init
+  (add-hook 'enh-ruby-mode-hook #'setup-compile-command)
+  :bind (("C-c r" . compile)))
 
 (setq ruby-deep-indent-paren nil)
 
