@@ -43,9 +43,18 @@
 ;; setup custom modules path
 (add-to-list 'load-path (expand-file-name "modules" "~/.emacs.d"))
 
-(require 'theme)
-(require 'line-number)
-(require 'bash)
-(require 'yaml)
-;; (require 'ruby)
-(require 'git)
+(defun require-essentials ()
+  (progn
+    (require 'theme)
+    (require 'git)))
+
+(if (member "--super-fast" command-line-args)
+    (progn
+      (delete "--super-fast" command-line-args)
+      (require-essentials))
+  (progn
+    (require-essentials)
+    (require 'line-number)
+    (require 'bash)
+    (require 'yaml)
+    (require 'ruby)))
