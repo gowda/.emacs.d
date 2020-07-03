@@ -65,3 +65,4 @@
 (require 'bash)
 (require 'yaml)
 ;; (require 'ruby)
+(require 'git)
