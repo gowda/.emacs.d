@@ -45,6 +45,12 @@
   :init
   (add-hook 'enh-ruby-mode-hook 'flymake-ruby-load))
 
+(use-package ruby-electric
+  :ensure t
+  :commands ruby-electric-mode
+  :init
+  (add-hook 'enh-ruby-mode-hook 'ruby-electric-mode))
+
 (defun switch-to-inf ()
   "Switch to the ruby process, create one if none exists"
   (interactive)
