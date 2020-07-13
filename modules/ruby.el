@@ -22,9 +22,9 @@
   (("Capfile" . enh-ruby-mode)
    ("Gemfile\\'" . enh-ruby-mode)
    ("Rakefile" . enh-ruby-mode)
-   ("\\.rb" . enh-ruby-mode)
-   ("\\.ru" . enh-ruby-mode)
-   ("\\.rake" . enh-ruby-mode))
+   ("\\.rb\\'" . enh-ruby-mode)
+   ("\\.ru\\'" . enh-ruby-mode)
+   ("\\.rake\\'" . enh-ruby-mode))
   :init
   (add-hook 'enh-ruby-mode-hook #'setup-compile-command)
   :bind (("C-c r" . compile)))
