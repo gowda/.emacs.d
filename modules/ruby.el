@@ -31,13 +31,18 @@
 
 (setq ruby-deep-indent-paren nil)
 
+(setq ruby-global-rvm-enabled nil)
+
 (use-package rvm
   :ensure t
   :commands rvm-activate-corresponding-ruby
   :init
   (add-hook 'enh-ruby-mode-hook
             (lambda ()
-              (rvm-activate-corresponding-ruby))))
+              (unless ruby-global-rvm-enabled
+                (progn
+                  (rvm-activate-corresponding-ruby)
+                  (setq ruby-global-rvm-enabled t))))))
 
 (use-package flymake-ruby
   :ensure t
