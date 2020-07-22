@@ -43,6 +43,9 @@
 ;; enable electric-pair for programming
 (add-hook 'prog-mode-hook (lambda () (electric-pair-mode 1)))
 
+;; navigation using readline
+(add-hook 'prog-mode-hook (lambda () (subword-mode)))
+
 ;; setup custom modules path
 (add-to-list 'load-path (expand-file-name "modules" "~/.emacs.d"))
 
